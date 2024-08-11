@@ -33,9 +33,9 @@ public class ProjectSecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
-                .password("{noop}EazyBytes@12345").authorities("read").build();
+                .password("{noop}bumsoap@1234").authorities("read").build();
         UserDetails admin = User.withUsername("admin")
-                .password("{bcrypt}$2a$12$88.f6upbBvy0okEa7OfHFuorV29qeK.sVbB9VQ6J6dWM1bW6Qef8m")
+                .password("{bcrypt}$2a$12$tthnDOqwlnRQxf7dmFepsunl19OI0.dVdlraVPBAzcz7JLDMsyZ1O")
                 .authorities("admin").build();
         return new InMemoryUserDetailsManager(user, admin);
     }
