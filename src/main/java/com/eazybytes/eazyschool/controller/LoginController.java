@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
-    @RequestMapping(value = "/login", method = {RequestMethod.GET})
+    @RequestMapping(value = "/bumlogin", method = {RequestMethod.GET})
     public String displayLoginPage() {
         return "login.html";
     }
