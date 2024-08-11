@@ -26,7 +26,7 @@ public class ProjectSecurityConfig {
                                 "/courses", "/about", "/assets/**", "/login/**").permitAll())
                 .formLogin(flc -> flc.loginPage("/login")
                         .usernameParameter("userid").passwordParameter("secret")
-                        .defaultSuccessUrl("/dashboard"))
+                        .defaultSuccessUrl("/dashboard").failureUrl("/login?error=true"))
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();
