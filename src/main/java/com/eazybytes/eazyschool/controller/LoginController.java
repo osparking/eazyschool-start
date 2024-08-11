@@ -13,10 +13,14 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = {RequestMethod.GET})
     public String displayLoginPage(Model model,
-            @RequestParam(value="error", required = false) String error) {
+            @RequestParam(value="error", required = false) String error,
+            @RequestParam(value="logout", required = false) String logout) {
         String errorMsg = null;
         if (error != null) {
             errorMsg = "유저네임 혹은 비밀번호 오류입니다.";
+        }
+        if (logout != null && "true".equals(logout)) {
+            errorMsg = "성공적으로 로그아웃 되었습니다.";
         }
         model.addAttribute("errorMessge", errorMsg);
         return "login.html";
