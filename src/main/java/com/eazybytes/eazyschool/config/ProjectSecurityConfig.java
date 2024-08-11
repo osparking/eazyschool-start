@@ -36,6 +36,9 @@ public class ProjectSecurityConfig {
                         .defaultSuccessUrl("/dashboard").failureUrl("/login?error=true")
                         .successHandler(authenticationSuccessHandler)
                         .failureHandler(authenticationFailureHandler))
+                .logout(loc -> {
+                    loc.logoutSuccessUrl("/login?logout=true");
+                })
                 .httpBasic(Customizer.withDefaults());
 
         return http.build();
