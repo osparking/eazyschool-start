@@ -23,7 +23,7 @@ public class ProjectSecurityConfig {
         http.csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests.requestMatchers("/dashboard").authenticated()
                         .requestMatchers("/", "/home", "/holidays/**", "/contact", "/saveMsg",
-                                "/courses", "/about", "/assets/**").permitAll())
+                                "/courses", "/about", "/assets/**", "/login/**").permitAll())
                 .formLogin(flc -> flc.loginPage("/login"))
                 .httpBasic(Customizer.withDefaults());
 
