@@ -21,16 +21,20 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a th:href="@{/home}" class="nav-link" aria-current="page">Home</a>
+                            <a th:href="@{/home}" class="nav-link" aria-current="page"
+                               sec:authorize="isAnonymous()" >Home</a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/courses}" class="nav-link">Courses</a>
+                            <a th:href="@{/courses}" class="nav-link"
+                               sec:authorize="isAnonymous()" >Courses</a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/contact}" class="nav-link">Contact</a>
+                            <a th:href="@{/contact}" class="nav-link"
+                               sec:authorize="isAnonymous()" >Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a th:href="@{/login}" class="nav-link">LogIn</a>
+                            <a th:href="@{/login}" class="nav-link"
+                               sec:authorize="isAnonymous()" >LogIn</a>
                         </li>
                         <li class="nav-item">
                             <a th:href="@{/dashboard}" class="nav-link">Dashboard</a>
