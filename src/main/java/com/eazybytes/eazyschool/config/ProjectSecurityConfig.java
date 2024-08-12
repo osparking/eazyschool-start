@@ -37,7 +37,9 @@ public class ProjectSecurityConfig {
                         .successHandler(authenticationSuccessHandler)
                         .failureHandler(authenticationFailureHandler))
                 .logout(loc -> {
-                    loc.logoutSuccessUrl("/login?logout=true");
+                    loc.logoutSuccessUrl("/login?logout=true").
+                            invalidateHttpSession(true).clearAuthentication(true).
+                            deleteCookies("JSESSIONID");
                 })
                 .httpBasic(Customizer.withDefaults());
 
